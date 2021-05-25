@@ -32,7 +32,7 @@
         android:background="@drawable/round_border"
         android:hint="MH12AB1234"
         android:padding="15dp"
-        android:text="MH12AB1234"
+        tools:text="MH12AB1234"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvLebel" />
