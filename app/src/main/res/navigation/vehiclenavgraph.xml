@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vehiclenavgraph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.st.vehicleregister.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_vehicleProfileFragment"
+            app:destination="@id/vehicleProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createProfileFragment"
+        android:name="com.st.vehicleregister.ui.fragments.CreateProfileFragment"
+        android:label="fragment_create_profile"
+        tools:layout="@layout/fragment_create_profile">
+        <action
+            android:id="@+id/action_createProfileFragment_to_makeFragment"
+            app:destination="@id/makeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/makeFragment"
+        android:name="com.st.vehicleregister.ui.fragments.MakeFragment"
+        android:label="fragment_make"
+        tools:layout="@layout/fragment_make">
+        <argument
+            android:name="vehicleName"
+            app:argType="string" />
+        <argument
+            android:name="vehicleclass"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_makeFragment_to_modelFragment"
+            app:destination="@id/modelFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/modelFragment"
+        android:name="com.st.vehicleregister.ui.fragments.ModelFragment"
+        android:label="fragment_model"
+        tools:layout="@layout/fragment_model">
+        <action
+            android:id="@+id/action_modelFragment_to_fuelTypeFragment"
+            app:destination="@id/fuelTypeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fuelTypeFragment"
+        android:name="com.st.vehicleregister.ui.fragments.FueltypeFragment"
+        android:label="fragment_fueltype"
+        tools:layout="@layout/fragment_fueltype">
+        <action
+            android:id="@+id/action_fuelTypeFragment_to_transmissionFragment"
+            app:destination="@id/transmissionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transmissionFragment"
+        android:name="com.st.vehicleregister.ui.fragments.TransmissionFragment"
+        android:label="fragment_transmission"
+        tools:layout="@layout/fragment_transmission">
+        <action
+            android:id="@+id/action_transmissionFragment_to_vehicleProfileFragment"
+            app:destination="@id/vehicleProfileFragment"
+            app:popUpTo="@id/createProfileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vehicleProfileFragment"
+        android:name="com.st.vehicleregister.ui.fragments.VehicleProfileFragment"
+        android:label="fragment_vehicle_profile"
+        tools:layout="@layout/fragment_vehicle_profile" />
+
+</navigation>
